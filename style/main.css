@@ -16,29 +16,114 @@ body{
     color: white;
 }
 
-header .container{
+.main-header{
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    z-index: 2;
+    height: 41px;
+    position: relative;
+    -moz-box-align: center;
+    align-items: center;
+    padding-top: 5px;
+    font-size: 0.8rem;
+    transition: background-color .4s;
 }
 
-header .logo{
-    margin-left: 5px;
-    color: var(--vermelho);
-    font-family: 'Arial Black';
-    font-size: 40px;
+.main-header .logo{
+    width: 110px;
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
-header nav a{
+.pinning-header-container{
+    margin-left: 20px;
+}
+
+.secondary-navigation{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-end;  
+    position: absolute;
+    right: 4%;
+    top: 0;
+    height: 100%;
+}
+
+.search-button{
+    background-color:transparent;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    margin-right: 5px;
+    font-size: 18px;
+
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.search-button:hover{
+    background-color: rgba(255,255,255,.50);
+    color: black;
+}
+
+.search-button i{
+    margin-right: 5px;
+}
+
+.account-menu-item {
+    display: block;
+    position: relative;
+    font-size: 12px;
+    z-index: 0;
+}
+
+.account-dropdown-button .profile-icon {
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 4px;
+}
+
+.tabbed-primary-navigation {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+}
+
+.tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-menu {
+    display: none;
+}
+
+.tabbed-primary-navigation .navigation-tab {
+    list-style-type: none;
+    margin-left: 18px;
+}
+
+.tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-tab {
+    display: block;
+}
+
+.navigation-tab a {
     text-decoration: none;
-    color: #AAA;
-    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    color: #e5e5e5;
+    transition: color .4s;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    height: 100%;
 }
 
-header nav a:hover{
+.navigation-tab a:hover {
     color: #fff;
 }
+
 
 /*filme principal*/
 .filme-principal{
@@ -46,20 +131,21 @@ header nav a:hover{
     background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url('/img/house-of-cards-capa3.jpg');
     height: 500px;
     background-size: cover;
+}
 
+.filme-principal .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
-
 .filme-principal .descricao{
     margin-top: 10px;
     margin-bottom: 40px;
 }
 
 .titulo{
-    margin-top: 15%;
+    margin-top: 35%;
     font-size: 40px;
     font-family: 'Trebuchet MS', Arial, sans-serif;
 }
@@ -71,6 +157,7 @@ header nav a:hover{
     padding: 15px 30px;
     margin-right: 15px;
     font-size: 12px;
+    border-radius: 4px;
 
     cursor: pointer;
     transition: .3s ease all;
